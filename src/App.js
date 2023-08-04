@@ -3,6 +3,13 @@ import {useState, useEffect} from "react";
 import Launches from "./components/Launches";
 import {Button, Container} from "@mui/material";
 import TopBar from './components/TopBar';
+import TableContainer from '@mui/material/TableContainer';
+import Table from '@mui/material/Table';
+import TableHead from '@mui/material/TableHead';
+import TableBody from '@mui/material/TableBody';
+import TableRow from '@mui/material/TableRow';
+import TableCell from '@mui/material/TableCell';
+import Paper from '@mui/material/Paper';
 
 function App() {
 
@@ -133,18 +140,18 @@ function App() {
                 {data["docs"] ? (
                     <div>
                         <Launches launches={data["docs"]}/>
-                        <p>Page {data["page"]} / {data["totalPages"]} </p>
-                        <Button variant="outlined" onClick={prevPage} disabled={currentPage === 1}>Prev Page</Button>
-                        <Button variant="outlined" onClick={nextPage} disabled={currentPage === data["totalPages"]}>Next
-                           Page</Button>
-
+                        <div className='paginationControls'>
+                            <Button variant="outlined" onClick={prevPage} disabled={currentPage === 1}>Prev Page</Button>
+                            <p>Page {data["page"]} / {data["totalPages"]} </p>
+                            <Button variant="outlined" onClick={nextPage} disabled={currentPage === data["totalPages"]}>Next
+                            Page</Button>
+                        </div>
                    </div>
                 ) : (
                     <div>Loading...</div>
                 )}
 
             </Container>
-
         </div>
     );
 }

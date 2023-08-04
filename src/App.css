@@ -1,3 +1,8 @@
 .App {
   text-align: center;
 }
+
+.paginationControls {
+  display: flex;
+  flex-direction: row;
+}

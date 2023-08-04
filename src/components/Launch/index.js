@@ -1,6 +1,8 @@
 import styles from './launch.module.css'
 import moment from 'moment'
 
+// TODO: REMOVE
+
 const Launch = ({props}) => {
 
     return (
