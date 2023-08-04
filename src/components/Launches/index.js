@@ -6,9 +6,10 @@ import TableHead from '@mui/material/TableHead';
 import TableBody from '@mui/material/TableBody';
 import TableRow from '@mui/material/TableRow';
 import TableCell from '@mui/material/TableCell';
+import TablePagination from "@mui/material/TablePagination";
 import moment from "moment";
 
-export default function Launches ({launches}) {
+export default function Launches ({ launches, currentPage, totalLaunches, changePage }) {
     return (
         <Container>
                 <TableContainer component={Paper}>
@@ -34,6 +35,18 @@ export default function Launches ({launches}) {
                             })
                             }
                         </TableBody>
+                        <TablePagination
+                            rowsPerPageOptions={-1}
+                            rowsPerPage={10}
+                            // MUI indexing for pages is zero-based
+                            page={currentPage - 1} 
+                            count={totalLaunches}
+                            onPageChange={(event, page) => {
+                                changePage(page + 1);
+                            }}
+                            showFirstButton={true}
+                            showLastButton={true}
+                        ></TablePagination>
                     </Table>
                 </TableContainer>
             </Container>

@@ -1,15 +1,8 @@
 import './App.css';
-import {useState, useEffect} from "react";
+import { useState, useEffect } from "react";
 import Launches from "./components/Launches";
-import {Button, Container} from "@mui/material";
+import { Container } from "@mui/material";
 import TopBar from './components/TopBar';
-import TableContainer from '@mui/material/TableContainer';
-import Table from '@mui/material/Table';
-import TableHead from '@mui/material/TableHead';
-import TableBody from '@mui/material/TableBody';
-import TableRow from '@mui/material/TableRow';
-import TableCell from '@mui/material/TableCell';
-import Paper from '@mui/material/Paper';
 
 function App() {
 
@@ -18,7 +11,7 @@ function App() {
     const apiUrl = 'https://api.spacexdata.com/v4/launches/query';
 
     function getQueryBody(pageNumber) {
-        return  {
+        return {
             query: {
                 upcoming: false,
                 success: true
@@ -123,14 +116,10 @@ function App() {
         fetchData(currentPage);
     }, []);
 
-    const nextPage = () => {
-        setCurrentPage(currentPage + 1)
-        fetchData(currentPage + 1)
-    }
-    const prevPage = () => {
-        setCurrentPage(currentPage - 1)
-        fetchData(currentPage - 1)
-    }
+    function changePage(pageSelected) {
+        setCurrentPage(pageSelected);
+        fetchData(pageSelected);
+    };
 
     return (
         <div>
@@ -138,15 +127,12 @@ function App() {
             <Container>
                 <p>Total Launches: {data["totalDocs"]}</p>
                 {data["docs"] ? (
-                    <div>
-                        <Launches launches={data["docs"]}/>
-                        <div className='paginationControls'>
-                            <Button variant="outlined" onClick={prevPage} disabled={currentPage === 1}>Prev Page</Button>
-                            <p>Page {data["page"]} / {data["totalPages"]} </p>
-                            <Button variant="outlined" onClick={nextPage} disabled={currentPage === data["totalPages"]}>Next
-                            Page</Button>
-                        </div>
-                   </div>
+                    <Launches
+                        launches={data["docs"]}
+                        currentPage={currentPage}
+                        totalLaunches={data["totalDocs"]}
+                        changePage={changePage}
+                    />
                 ) : (
                     <div>Loading...</div>
                 )}

@@ -60,7 +60,7 @@ export default function TopBar() {
                         sx={{ p: 2 }}
                         width='15em'
                     >
-                        In this app you can browse data on succesful SpaceX launches, starting from the latest. Click on a row to get additional information about the launch and some cool pics 🚀
+                        In this app you can browse data on succesful SpaceX launches, starting from the latest. Browse the table, click on a row to get additional information about the launch and some cool pics 🚀
 
                     </Typography>
                 </Popover>
