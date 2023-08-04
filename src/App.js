@@ -2,6 +2,7 @@ import './App.css';
 import {useState, useEffect} from "react";
 import Launches from "./components/Launches";
 import {Button, Container} from "@mui/material";
+import TopBar from './components/TopBar';
 
 function App() {
 
@@ -126,7 +127,7 @@ function App() {
 
     return (
         <div>
-
+            <TopBar></TopBar>
             <Container>
                 <p>Total Launches: {data["totalDocs"]}</p>
                 {data["docs"] ? (

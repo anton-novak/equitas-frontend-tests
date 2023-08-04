@@ -1,0 +1,12 @@
+.topBar {
+    display: flex;
+    flex-direction: row !important;
+    justify-content: space-between;
+    gap: 1em;
+    padding: 0.5em;
+}
+
+.logoBlock {
+    display: flex;
+    flex-direction: row;
+}
