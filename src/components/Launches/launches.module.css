@@ -4,3 +4,11 @@
     text-align: center;
     padding-top: 10px;
 }
+
+.columnHeader {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5em;
+}

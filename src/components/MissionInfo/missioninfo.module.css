@@ -1,0 +1,11 @@
+.missionInfo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px !important;
+}
+
+.missionLogo {
+    max-width: 40%;
+}

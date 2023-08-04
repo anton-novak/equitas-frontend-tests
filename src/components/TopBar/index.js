@@ -1,4 +1,3 @@
-import App from '../../App';
 import styles from './topbar.module.css';
 import { AppBar } from '@mui/material';
 import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
@@ -53,7 +52,8 @@ export default function TopBar() {
                         horizontal: 'right'
                     }}
                     transformOrigin={{
-                        horizontal: 'right'
+                        horizontal: 'right',
+                        vertical: 'bottom'
                     }}
                 >
                     <Typography
