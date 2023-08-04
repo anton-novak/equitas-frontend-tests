@@ -19,7 +19,7 @@ export default function Launches({ launches, currentPage, totalLaunches, changeP
         <Container>
             <TableContainer component={Paper}>
                 <Table>
-                    <TableHead>
+                    <TableHead className={styles.tableHeader}>
                         <TableRow>
                             <TableCell>
                                 <div className={styles.columnHeader}>
@@ -62,7 +62,7 @@ export default function Launches({ launches, currentPage, totalLaunches, changeP
                     <TableBody>
                         {launches.map((launch, index) => {
                             return (
-                                <Launch launch={launch} key={index} />
+                                <Launch launch={launch} key={index} index={index} />
                             )
                         })
                         }

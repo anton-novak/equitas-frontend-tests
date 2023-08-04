@@ -1,7 +1,7 @@
 import './App.css';
 import { useState, useEffect } from "react";
 import Launches from "./components/Launches";
-import { Container } from "@mui/material";
+import { Typography } from "@mui/material";
 import TopBar from './components/TopBar';
 
 function App() {
@@ -123,21 +123,27 @@ function App() {
 
     return (
         <div>
-            <TopBar></TopBar>
-            <Container>
-                <p>Total Launches: {data["totalDocs"]}</p>
-                {data["docs"] ? (
-                    <Launches
-                        launches={data["docs"]}
-                        currentPage={currentPage}
-                        totalLaunches={data["totalDocs"]}
-                        changePage={changePage}
-                    />
-                ) : (
-                    <div>Loading...</div>
-                )}
-
-            </Container>
+            <TopBar numLaunches={data["totalDocs"]}></TopBar>
+            {data["docs"] ? (
+                <Launches
+                    launches={data["docs"]}
+                    currentPage={currentPage}
+                    totalLaunches={data["totalDocs"]}
+                    changePage={changePage}
+                />
+            ) : (
+                <div>Loading...</div>
+            )}
+            <Typography
+                variant='subtitle2'
+                component='p'
+                color='grey'
+                align='center'
+                margin='0px auto'
+                paddingTop='1em'
+            >
+                Home assignment for Equitas by Anton Novak, 4 August 2023
+            </Typography>
         </div>
     );
 }

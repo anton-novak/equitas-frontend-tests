@@ -1,0 +1,19 @@
+.bandedRow {
+    background-color: #F1F2F3;
+}
+
+.nameColumn {
+    width: 30%;
+}
+
+.idColumn {
+    width: 25%;
+}
+
+.numberColumn {
+    width: 20%;
+}
+
+.dateColumn {
+    width: 25%;
+}

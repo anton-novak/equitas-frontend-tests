@@ -1,8 +1,9 @@
-.page {
-    height: 150px;
-    width:350px;
-    text-align: center;
-    padding-top: 10px;
+.tableHeader {
+    background-color: #F1F2F3;
+}
+
+.tableHeader * {
+    font-weight: bold !important;
 }
 
 .columnHeader {
@@ -12,3 +13,4 @@
     align-items: center;
     gap: 0.5em;
 }
+
